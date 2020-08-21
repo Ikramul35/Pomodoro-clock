@@ -92,7 +92,8 @@ export default {
         production &&
             terser() &&
             ghPages.publish('public', (err) => {
-                console.log('published to the github', err);
+                if (err) console.log(err);
+                else console.log('Successfully published to the github pages');
             }),
     ],
     watch: {
