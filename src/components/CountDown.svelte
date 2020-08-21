@@ -3,6 +3,9 @@
     import '@smui/button/bare.css';
     import { workDur, breakDur, longBreakDur, noOfSession } from '../stores';
     import { onDestroy } from 'svelte';
+    import PauseCircleOutline from '../assets/PauseCircleOutline.svelte';
+    import PlayCircleOutline from '../assets/play_circle_outline.svelte';
+    import Replay from '../assets/replay.svelte';
 
     let min = $workDur;
     let sec = 0;
@@ -77,15 +80,15 @@
 <p>{countDown}</p>
 <div class="btn-container">
     <Button on:click={ctrPause}>
-        <Icon class="material-icons">pause_circle_outline</Icon>
+        <PauseCircleOutline />
         <Label>Pause</Label>
     </Button>
     <Button on:click={nextCtr}>
-        <Icon class="material-icons">play_circle_outline</Icon>
+        <PlayCircleOutline />
         <Label>Start</Label>
     </Button>
     <Button on:click={ctrReset}>
-        <Icon class="material-icons">replay</Icon>
+        <Replay />
         <Label>Reset</Label>
     </Button>
 </div>
